@@ -6,9 +6,9 @@
 ## Overview
 Have you ever wanted to send an anonymous, threatening ransom note to someone, but don't have time between kidnappings and bank heists to cut out one hundred letters from magazines?   
 
-Save time today - "SpooPy Notes" creates personalized ransom notes for you, simply and quickly. It's easy - even easier than breaking into a 1998 Camry. 
+Save time today - "SpooPy Notes" creates personalized ransom notes for you, simply and quickly. It's easier than breaking into a 1998 Camry!
 
-Use one of our pre-designed (and tested) templates to menacingly coerce your targets into sending money to your decentralized, off-shore bank account.  Or, write your own message for that special, personalized touch.
+Use one of our pre-designed (and tested) templates to menacingly coerce your targets into adding bitcoins to your off-shore bank account.  Or, write your own message for that special, personalized touch, you casanova.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
