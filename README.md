@@ -7,6 +7,11 @@
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+Take a picture of a collection of text and subtmit it our application. 
+
+Our application will create a web page with the text parsed out from the photograph so it will be readable.
+
+Take a picture of text, rearrange the tex,t and recreate the image using altered versions of the original words
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. This is also an area which you can include any visuals; flow charts, example usage gifs, screen captures, etc.-->
