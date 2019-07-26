@@ -1,12 +1,20 @@
-# pyskim
-**Author**: Your Name(s) Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
+# SpooPy Notes
+**Author**: Tammy Do, Skyler Burger, Aliya Summers, Joshua Ho 
+**Version**: 1.0.0
+
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 401 class. (i.e. What's your problem domain?) -->
+Have you ever wanted to send an anonymous, threatening ransom note to someone, but don't have time between kidnappings and bank heists to cut out one hundred letters from magazines?   
+
+Save time today - "SpooPy Notes" creates personalized ransom notes for you, simply and quickly. It's easy - even easier than breaking into a 1998 Camry. 
+
+Use one of our pre-designed (and tested) templates to menacingly coerce your targets into sending money to your decentralized, off-shore bank account.  Or, write your own message for that special, personalized touch.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+
+Go to "this" URL and submit a string in the query string.  The program will return your text in an image... a creepy, ransom note. 
+
 Take a picture of a collection of text and subtmit it our application. 
 
 Our application will create a web page with the text parsed out from the photograph so it will be readable.
