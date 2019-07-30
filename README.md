@@ -32,3 +32,17 @@ Take a picture of text, rearrange the tex,t and recreate the image using altered
 
 01-01-2001 4:59pm - Added functionality to add and delete some things.
 -->
+
+## User Stories
+
+As someone who wants to scare their friends, I want to be able to make spooky notes without involving craft supplies.
+
+As a developer, I want to learn how to use the OCR/PyTesseract library to build text content from images.
+
+As a developer, I want an easy to use back-end that is well-documented and commented.
+
+As a user, I want an easy to use interface that allows me to quickly create my own spooky note.
+
+As a potential receiver of a note, I want a note that is entertaining to read.
+
+STRETCH GOAL - As a user, I want to be able to see other saved ransom notes for inspiration. 
