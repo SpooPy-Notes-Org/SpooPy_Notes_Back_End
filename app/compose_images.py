@@ -1,4 +1,6 @@
 from PIL import Image
+import os
+from os.path import abspath, join
 
 #####################
 #    Test Images    #
@@ -13,7 +15,7 @@ imgsFolder = [
 
 
 def determine_canvas(input_images):
-    images = [Image.open(image) for image in input_images]
+    images = [Image.open(join(os.getcwd(), abspath(image))) for image in input_images]
     
     sum_width = 0
     max_height = 0
@@ -30,7 +32,7 @@ def determine_canvas(input_images):
 
 
 def compose_image(width, height, images):
-    background = Image.new('RGAB', (width, height), (255, 255, 255, 255))
+    background = Image.new('RGBA', (width, height), (255, 255, 255, 255))
     width_offset = 10
 
     for img in images:
@@ -40,3 +42,5 @@ def compose_image(width, height, images):
         background.paste(img, offset)
 
     background.save('output.png')
+
+determine_canvas(imgsFolder)
