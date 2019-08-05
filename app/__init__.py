@@ -7,8 +7,8 @@ def create_app(ConfigClass):
 
     with app.app_context():
 
-        @app.route('/ships', methods=['POST'])
-        def create_ship():
+        @app.route('/', methods=['GET'])
+        def get_spoopy():
 
             return "Hello World"
 
