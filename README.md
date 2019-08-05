@@ -8,7 +8,7 @@ Have you ever wanted to send an anonymous, threatening ransom note to someone, b
 
 Save time today - "SpooPy Notes" creates personalized ransom notes for you, simply and quickly. It's easier than breaking into a 1998 Camry!
 
-Use one of our pre-designed (and tested) templates to menacingly coerce your targets into adding bitcoins to your off-shore bank account.  Or, write your own message for that special, personalized touch, you casanova.
+Use one of our pre-designed (and tested) templates to coerce your targets into adding bitcoins to your off-shore bank account.  Or, write your own message for that special, personalized touch, you casanova.
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
@@ -27,11 +27,26 @@ Take a picture of text, rearrange the tex,t and recreate the image using altered
 ## API
 <!-- Provide detailed instructions for your applications usage. This should include any methods or endpoints available to the user/client/developer. Each section should be formatted to provide clear syntax for usage, example calls including input data requirements and options, and example responses or return values. -->
 
+<!-- GET ('/') -  Default homepage -->
+
+https://spoopy-notes.onrender.com
+
+Currently, all routes return our homepage by default.
+
 ## Change Log
 <!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
 
 01-01-2001 4:59pm - Added functionality to add and delete some things.
+
+Month-Day-Year Time
 -->
+
+08-05-2019 11:00 AM - 
+  Set up basic Flask application onto render - https://spoopy-notes.onrender.com 
+  Added basic router
+  Created two repositories - Front End and Back End
+  Updated ownership and collaboration settings for organization and repositories
+  Uploaded initial file structure for both repositories
 
 ## User Stories
 
