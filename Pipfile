@@ -9,6 +9,7 @@ gunicorn = "*"
 python-dotenv = "*"
 pytest = "*"
 pillow = "*"
+flask-cors = "*"
 
 [dev-packages]
 
