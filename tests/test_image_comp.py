@@ -68,7 +68,7 @@ def test_create_lines(words):
 
 def test_determine_background(lines):
     actual = determine_background(lines)
-    assert actual == (461, 157)
+    assert actual == (481, 167)
 
 
 # This test may need some TLC
