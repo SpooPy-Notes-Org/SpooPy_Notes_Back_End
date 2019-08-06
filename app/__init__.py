@@ -1,3 +1,5 @@
+from app.letters.letters import *
+from app.compose_images import *
 from flask import Flask, jsonify, request
 
 def create_app(ConfigClass):
@@ -9,8 +11,17 @@ def create_app(ConfigClass):
 
         @app.route('/', methods=['GET'])
         def get_spoopy():
+            # get query string
+            query = request.args.get('query')
 
-            return "Hello World"
+            paths = generate_paths(query)
+            words = create_word_dictionaries(paths)
+            lines = create_lines(words)
+            width, height = determine_background(lines)
+            image = compose_image(width, height, lines)
+
+
+            return serve_pil_image(image)
 
     return app
 

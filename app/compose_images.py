@@ -1,6 +1,8 @@
 from PIL import Image
+from flask import send_file
 import os
 from os.path import abspath, join
+from io import BytesIO
 
 
 def create_word_dictionaries(char_list):
@@ -50,8 +52,8 @@ def create_lines(word_dicts):
     Takes in a list of word dictionaries.
     Returns a list of lines.
     """
-    max_width = 600
-    space = 10
+    max_width = 900
+    space = 20
     line_width = 0
     line_height = 0
     line_count = 0
@@ -95,7 +97,7 @@ def determine_background(lines):
     for i in range(len(lines)):
         if lines[i].get('width') > max_width:
             max_width = lines[i].get('width')
-        sum_of_height += lines[i].get('height') + 10
+        sum_of_height += lines[i].get('height') + 20
 
     max_width += 20
     sum_of_height += 10
@@ -129,9 +131,17 @@ def compose_image(width, height, lines):
             horizontal_buffer += 10
         v_buffer += line_height + 10
 
-    background.save('output.png')
+    # background.save('output.png')
 
-    return join(os.getcwd(), 'output.png')
+    # return join(os.getcwd(), 'output.png')
+    return background
+
+
+def serve_pil_image(pil_img):
+   img_io = BytesIO()
+   pil_img.save(img_io, 'PNG', quality=70)
+   img_io.seek(0)
+   return send_file(img_io, mimetype='image/jpeg')
 
 
 if __name__ == "__main__":
