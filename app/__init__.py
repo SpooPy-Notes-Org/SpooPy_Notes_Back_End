@@ -1,9 +1,11 @@
 from app.letters.letters import *
 from app.compose_images import *
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 def create_app(ConfigClass):
     app = Flask(__name__)
+    CORS(app)
 
     app.config.from_object(ConfigClass)
 
