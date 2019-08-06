@@ -4,26 +4,25 @@ import random
 from PIL import Image
 
 
-# contains pathing to the letters
-# f string... path f'{letter}_{random_num}.png'
-def read_image(path):
+# contains dynamic pathing to the letters
 
-    try:
-        img = Image.open(path)
-        img.show()
-    except FileNotFoundError:
-        print('no file found fix pathing: you got this', path)
+def accept_query_string(query):
+    print(query)
+    return query
+    
 
-class Letters:
+def generate_paths(query_string):
+    path_list = []
+    for char in query_string:
 
-    rand = random.randint(1, 3)
-    base_letter_path = 'app/assets/'
+        rand = random.randint(1, 3)
+        base_letter_path = 'app/assets/'
+        
+        letter = f'{base_letter_path}{char}_{rand}.png'
 
-    # letter should be set to ones from query string
-    a = f'{base_letter_path}a_{rand}.png'
-
-    result = join(os.getcwd(), abspath(a))
-
-    read_image(result)
-
-
+        path_list.append(letter)
+    print(path_list)
+        
+query = input('Enter your message here: ')
+query_string = accept_query_string(query)
+generate_paths(query_string)
