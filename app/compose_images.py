@@ -85,6 +85,10 @@ def create_lines(word_dicts):
 
 
 def determine_background(lines):
+    """
+    Takes in a list of lines.
+    Returnes the width and height of the background image needed for final image.
+    """
     max_width = 0
     sum_of_height = 0
 
