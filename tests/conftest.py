@@ -9,7 +9,13 @@ class TestConfig(Config):
 @pytest.fixture
 def client():
     app = create_app(TestConfig)
-    app_context = app.app_context
+    app_context = app.app_context()
+    app_context.push()
+
+    with app.test_client() as client:
+        yield client
+
+    app_context.pop()
 
 # @pytest.fixture
 # def test_status_200():
