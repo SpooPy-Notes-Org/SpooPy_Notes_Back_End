@@ -27,6 +27,7 @@ special_chars = {
 
 
 def generate_paths(query_string):
+    query_string = query_string.lower()
     path_list = []
     for char in query_string:
 
@@ -40,7 +41,9 @@ def generate_paths(query_string):
             continue
 
         path_list.append(letter)
-    print(path_list)
         
-query = input('Enter your message here: ')
-generate_paths(query)
+    return path_list
+
+if __name__ == "__main__":       
+    query = input('Enter your message here: ')
+    generate_paths(query)

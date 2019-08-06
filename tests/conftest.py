@@ -11,37 +11,37 @@ def client():
     app = create_app(TestConfig)
     app_context = app.app_context
 
-@pytest.fixture
-def test_status_200():
-    pass
+# @pytest.fixture
+# def test_status_200():
+#     pass
 
-@pytest.fixture
-def test_image_type_png():
-    pass
+# @pytest.fixture
+# def test_image_type_png():
+#     pass
 
-@pytest.fixture
-def test_query_intake():
-    pass
+# @pytest.fixture
+# def test_query_intake():
+#     pass
 
-@pytest.fixture
-def test_single_letter_to_png():
-    pass
+# @pytest.fixture
+# def test_single_letter_to_png():
+#     pass
 
-@pytest.fixture
-def test_image_composer_abc_as_one_png():
-    pass
+# @pytest.fixture
+# def test_image_composer_abc_as_one_png():
+#     pass
 
-@pytest.fixture
-def test_image_composer_spoopy():
-    pass
+# @pytest.fixture
+# def test_image_composer_spoopy():
+#     pass
 
-@pytest.fixture
-def test_query_to_png():
-    pass
+# @pytest.fixture
+# def test_query_to_png():
+#     pass
 
-@pytest.fixture
-def test_image_size_range():
-    pass
+# @pytest.fixture
+# def test_image_size_range():
+#     pass
 
 
 
