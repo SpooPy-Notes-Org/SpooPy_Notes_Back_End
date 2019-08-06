@@ -1,34 +1,25 @@
 from PIL import Image
 import os
 from os.path import abspath, join
-
-#####################
-#    Test Images    #
-#####################
-imgsFolder = [
- 'assets/style_1/t_1.png',
- 'assets/style_1/h_1.png',
- 'assets/style_1/i_1.png',
- 'assets/style_1/n_1.png',
- 'assets/style_1/k_1.png'
-]
+import asyncio
 
 
 def determine_canvas(input_images):
     images = [Image.open(join(os.getcwd(), abspath(image))) for image in input_images]
-    
+    image_buffer = 20
     sum_width = 0
     max_height = 0
+
     for img in images:
         width, height = img.size
         sum_width += width
         if height > max_height:
             max_height = height
 
-    sum_width +=20
-    max_height += 20
+    sum_width += image_buffer
+    max_height += image_buffer
 
-    return compose_image(sum_width, max_height, images)
+    return (sum_width, max_height)
 
 
 def compose_image(width, height, images):
@@ -42,5 +33,19 @@ def compose_image(width, height, images):
         background.paste(img, offset)
 
     background.save('output.png')
+    return join(os.getcwd(), 'output.png')
 
-determine_canvas(imgsFolder)
+
+# Just for now
+if __name__ == "__main__":
+    imgsFolder = [
+        'assets/style_1/t_1.png',
+        'assets/style_1/h_1.png',
+        'assets/style_1/i_1.png',
+        'assets/style_1/n_1.png',
+        'assets/style_1/k_1.png'
+    ]
+    images = [Image.open(join(os.getcwd(), abspath(image))) for image in imgsFolder]
+
+    width, height = determine_canvas(imgsFolder)
+    compose_image(width, height, images)

@@ -41,4 +41,4 @@ def compose_image(width, height, images):
     paste letters together with a space of 10px between
     save new image
     
-    return new png
+    return new png'''
