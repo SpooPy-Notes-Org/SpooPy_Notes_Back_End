@@ -8,12 +8,20 @@ def create_word_dictionaries(char_list):
     Takes in a list of Image instances.
     Returns a list of word dictionaries.
     """
+    images = []
+
+    for char in char_list:
+        if char != ' ':
+            images.append(Image.open(join(os.getcwd(), abspath(char)))) 
+        else:
+            images.append(char)
+
     char_count = 0
     word_dict = {}
     word_list = []
     sum_of_width = 0
     max_height = 0
-    for char in char_list:
+    for char in images:
         if char == ' ':
             word_dict['height'] = max_height
             word_dict['width'] = sum_of_width
@@ -124,12 +132,19 @@ def compose_image(width, height, lines):
 
 if __name__ == "__main__":
     images = [
-        'assets/style_1/t_1.png',
-        'assets/style_1/h_1.png',
-        'assets/style_1/i_1.png',
-        'assets/style_1/n_1.png',
-        'assets/style_1/k_1.png'
+        'app/assets/t_1.png',
+        'app/assets/h_1.png',
+        'app/assets/i_1.png',
+        'app/assets/n_1.png',
+        'app/assets/k_1.png',
+        ' ',
+        'app/assets/t_1.png',
+        'app/assets/h_1.png',
+        'app/assets/i_1.png',
+        'app/assets/n_1.png',
+        'app/assets/k_1.png',
     ]
+
 
     result = create_word_dictionaries(images)
 
