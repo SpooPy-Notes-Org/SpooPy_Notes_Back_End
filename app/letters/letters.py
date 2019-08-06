@@ -1,15 +1,8 @@
 import os
 from os.path import abspath, join
 import random
-from PIL import Image
-
 
 # contains dynamic pathing to the letters
-
-def accept_query_string(query):
-    print(query)
-    return query
-    
 
 def generate_paths(query_string):
     path_list = []
@@ -24,5 +17,4 @@ def generate_paths(query_string):
     print(path_list)
         
 query = input('Enter your message here: ')
-query_string = accept_query_string(query)
-generate_paths(query_string)
+generate_paths(query)
