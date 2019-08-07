@@ -11,10 +11,10 @@ def create_app(ConfigClass):
 
     with app.app_context():
 
-        @app.route('/', methods=['POST'])
+        @app.route('/', methods=['GET'])
         def get_spoopy():
-            if request.form['query'] != None:
-                return create_note(request.form['query'])
+            if request.args.get('query') != None:
+                return create_note(request.args.get('query'))
             else:
                 content = {'error': 'invalid'}
                 return content, status.HTTP_404_NOT_FOUND
