@@ -1,6 +1,7 @@
 from PIL import Image
 from flask import send_file
 import os
+import random
 from os.path import abspath, join
 from io import BytesIO
 
@@ -153,3 +154,61 @@ def serve_pil_image(pil_img):
     pil_img.save(img_io, 'PNG', quality=70)
     img_io.seek(0)
     return send_file(img_io, mimetype='image/png')
+
+
+"""
+input = a string, the message you want to enter
+
+special_ chars = a dictionary of punctuation marks that is accessed with the query
+
+generate paths = a function that builds dynamic pathing to each character in the query, so that the images can be used in a personalized ransom note
+"""
+
+base_punctuation_path = 'app/assets/punctuation_1'
+
+special_chars = {
+    '&': f'{base_punctuation_path}/ampersand_1.png',
+    '\'': f'{base_punctuation_path}/apostrophe_1.png',
+    '*': f'{base_punctuation_path}/asterix_1.png',
+    '@': f'{base_punctuation_path}/at_1.png',
+    '\"': f'{base_punctuation_path}/doublequote_straight_1.png',
+    '!': f'{base_punctuation_path}/exclaimation_1.png',
+    '$': f'{base_punctuation_path}/money_1.png',
+    '%': f'{base_punctuation_path}/percentage_1.png',
+    '.': f'{base_punctuation_path}/period_1.png',
+    '#': f'{base_punctuation_path}/pound_1.png',
+    '?': f'{base_punctuation_path}/questionmark_1.png',
+    ' ': ' ' 
+}
+
+
+def generate_paths(query_string):
+    query_string = query_string.lower()
+    path_list = []
+    for char in query_string:
+
+        rand = random.randint(1, 4)
+        base_letter_path = 'app/assets/'
+        
+        letter = f'{base_letter_path}{char}_{rand}.png'
+
+        if char in special_chars:
+            path_list.append(special_chars[char])
+            continue
+
+        # error handling - checks if character is alphanumeric or in special characters
+        if char.isalnum() == False or char in special_chars:
+            raise ValueError(f'Invalid character input: {char}')
+
+        path_list.append(letter)
+        
+    return path_list
+
+
+def create_note(query_string):
+    paths = generate_paths(query_string)
+    words = create_word_dictionaries(paths)
+    lines = create_lines(words)
+    width, height = determine_background(lines)
+    image = compose_image(width, height, lines)
+    return serve_pil_image(image)
