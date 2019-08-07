@@ -178,6 +178,7 @@ special_chars = {
     '.': f'{base_punctuation_path}/period_1.png',
     '#': f'{base_punctuation_path}/pound_1.png',
     '?': f'{base_punctuation_path}/questionmark_1.png',
+    ',': f'{base_punctuation_path}/comma_1.png',
     ' ': ' ' 
 }
 
