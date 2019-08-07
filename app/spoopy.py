@@ -169,7 +169,7 @@ base_punctuation_path = 'app/assets/punctuation_1'
 special_chars = {
     '&': f'{base_punctuation_path}/ampersand_1.png',
     '\'': f'{base_punctuation_path}/apostrophe_1.png',
-    '*': f'{base_punctuation_path}/asterix_1.png',
+    '*': f'{base_punctuation_path}/asterisk_1.png',
     '@': f'{base_punctuation_path}/at_1.png',
     '\"': f'{base_punctuation_path}/doublequote_straight_1.png',
     '!': f'{base_punctuation_path}/exclaimation_1.png',
@@ -178,6 +178,7 @@ special_chars = {
     '.': f'{base_punctuation_path}/period_1.png',
     '#': f'{base_punctuation_path}/pound_1.png',
     '?': f'{base_punctuation_path}/questionmark_1.png',
+    ',': f'{base_punctuation_path}/comma_1.png',
     ' ': ' ' 
 }
 
