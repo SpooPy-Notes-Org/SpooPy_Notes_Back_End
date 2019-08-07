@@ -33,7 +33,7 @@ def generate_paths(query_string):
     path_list = []
     for char in query_string:
 
-        rand = random.randint(1, 3)
+        rand = random.randint(1, 4)
         base_letter_path = 'app/assets/'
         
         letter = f'{base_letter_path}{char}_{rand}.png'
