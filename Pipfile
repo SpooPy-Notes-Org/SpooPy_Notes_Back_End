@@ -10,6 +10,7 @@ python-dotenv = "*"
 pytest = "*"
 pillow = "*"
 flask-cors = "*"
+flask-api = "*"
 
 [dev-packages]
 

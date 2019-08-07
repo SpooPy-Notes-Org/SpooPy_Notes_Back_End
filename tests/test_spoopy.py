@@ -1,5 +1,4 @@
-from app.letters.letters import generate_paths
-from app.compose_images import *
+from app.spoopy import *
 
 import pytest
 
@@ -68,7 +67,7 @@ def test_create_lines(words):
 
 def test_determine_background(lines):
     actual = determine_background(lines)
-    assert actual == (481, 167)
+    assert actual == (521, 167)
 
 
 # This test may need some TLC
