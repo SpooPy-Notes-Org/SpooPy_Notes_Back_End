@@ -11,6 +11,7 @@ pytest = "*"
 pillow = "*"
 flask-cors = "*"
 flask-api = "*"
+requests = "*"
 
 [dev-packages]
 
