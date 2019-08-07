@@ -20,7 +20,8 @@ Head to our app and enter your ransom message. The app will turn your text into 
 ## API
 <!-- Provide detailed instructions for your applications usage. This should include any methods or endpoints available to the user/client/developer. Each section should be formatted to provide clear syntax for usage, example calls including input data requirements and options, and example responses or return values. -->
 
-Full front-end currently under development.
+To access our front-end:
+- Go to https://spoopy-notes.firebaseapp.com/
 
 To access just our back-end:
 - Go to https://spoopy-notes.onrender.com/?query=
