@@ -20,6 +20,19 @@ Head to our app and enter your ransom message. The app will turn your text into 
 ## API
 <!-- Provide detailed instructions for your applications usage. This should include any methods or endpoints available to the user/client/developer. Each section should be formatted to provide clear syntax for usage, example calls including input data requirements and options, and example responses or return values. -->
 
+Full front-end currently under development.
+
+To access just our back-end:
+- Go to https://spoopy-notes.onrender.com/?query=
+
+- In the query section of our URL, you may enter the message you wish to generate. For example: https://spoopy-notes.onrender.com/?query=spoopy notes
+
+    - Note: the browser will handle spacing for you.
+
+- Your returned image will look similar to this:
+![spoopy notes in magazine cut-out style](app/assets/spoopy_notes_img.png)
+
+
 ## Change Log
 
 08-05-2019  
