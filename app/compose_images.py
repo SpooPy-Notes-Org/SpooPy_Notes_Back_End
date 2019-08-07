@@ -7,7 +7,9 @@ from io import BytesIO
 
 def create_word_dictionaries(char_list):
     """
-    Takes in a list of Image instances.
+    Takes in a list of character image paths.
+    Converts paths to PIL Image objects.
+    Groups character image objects into words and stores them in dictionaries.
     Returns a list of word dictionaries.
     """
     images = []
@@ -18,9 +20,9 @@ def create_word_dictionaries(char_list):
         else:
             images.append(char)
 
-    char_count = 0
-    word_dict = {}
     word_list = []
+    word_dict = {}
+    char_count = 0
     sum_of_width = 0
     max_height = 0
     for char in images:
@@ -50,10 +52,11 @@ def create_word_dictionaries(char_list):
 def create_lines(word_dicts):
     """
     Takes in a list of word dictionaries.
+    Determines how many words can fit on each line.
     Returns a list of lines.
     """
     max_width = 900
-    space = 20
+    space = 40
     line_width = 0
     line_height = 0
     line_count = 0
@@ -106,6 +109,12 @@ def determine_background(lines):
 
 
 def compose_image(width, height, lines):
+    """
+    Takes in the width and height of the final image.
+    Takes in a list of lines.
+    Composes the final image.
+    Returns a PIL Image object.
+    """
     background = Image.new('RGBA', (width, height), (255, 255, 255, 255))
 
     bg_width = width
@@ -128,42 +137,19 @@ def compose_image(width, height, lines):
                           ((line_height - char_h) // 2 + v_buffer))
                 background.paste(char, offset)
                 horizontal_buffer += char_w
-            horizontal_buffer += 10
+            horizontal_buffer += 40
         v_buffer += line_height + 10
 
-    # background.save('output.png')
-
-    # return join(os.getcwd(), 'output.png')
     return background
 
 
 def serve_pil_image(pil_img):
-   img_io = BytesIO()
-   pil_img.save(img_io, 'PNG', quality=70)
-   img_io.seek(0)
-   return send_file(img_io, mimetype='image/jpeg')
-
-
-if __name__ == "__main__":
-    images = [
-        'app/assets/t_1.png',
-        'app/assets/h_1.png',
-        'app/assets/i_1.png',
-        'app/assets/n_1.png',
-        'app/assets/k_1.png',
-        ' ',
-        'app/assets/t_1.png',
-        'app/assets/h_1.png',
-        'app/assets/i_1.png',
-        'app/assets/n_1.png',
-        'app/assets/k_1.png',
-    ]
-
-
-    result = create_word_dictionaries(images)
-
-    result = create_lines(result)
-
-    x, y = determine_background(result)
-
-    compose_image(x, y, result)
+    """
+    Takes in a PIL Image object.
+    Stores the image in a BytesIO object.
+    Returns a command to send the image as a byte stream.
+    """
+    img_io = BytesIO()
+    pil_img.save(img_io, 'PNG', quality=70)
+    img_io.seek(0)
+    return send_file(img_io, mimetype='image/png')
