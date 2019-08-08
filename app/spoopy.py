@@ -117,7 +117,7 @@ def compose_image(width, height, lines):
     Composes the final image.
     Returns a PIL Image object.
     """
-    background = Image.new('RGBA', (width, height), (255, 255, 255, 255))
+    background = Image.new('RGBA', (width, height), (38, 38, 38, 255))
 
     bg_width = width
     bg_height = height
