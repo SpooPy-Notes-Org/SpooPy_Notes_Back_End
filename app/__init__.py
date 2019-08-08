@@ -15,7 +15,9 @@ def create_app(ConfigClass):
         @app.route('/', methods=['GET'])
         def get_spoopy():
             if request.args.get('query') != None:
-                return create_note(request.args.get('query'))
+                query = request.args.get('query')
+                width = int(request.args.get('width', 900))
+                return create_note(query, width)
             else:
                 content = {'error': 'invalid'}
                 return content, status.HTTP_404_NOT_FOUND
@@ -25,8 +27,7 @@ def create_app(ConfigClass):
             url = 'https://www.icanhazdadjoke.com'
             headers = {'Accept' : 'application/json'}
             dad_joke = requests.get(url, headers=headers).json()
-            print('********DAD JOKE:', dad_joke.get('joke'))
 
-            return create_note(dad_joke.get('joke'))
+            return create_note(dad_joke.get('joke'), 900)
 
     return app
