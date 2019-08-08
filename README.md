@@ -51,3 +51,6 @@ Use our API to create personalized messages in a ransom note styled output image
 - Refactored routes and modules
 - Added Dad Joke API integration
 - Refined image output
+
+08/08/2019 - **1.4.0**
+- Added custom resizing of output image
