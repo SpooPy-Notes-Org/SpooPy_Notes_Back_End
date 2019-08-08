@@ -1,54 +1,53 @@
-# SpooPy Notes
-**Author**: Tammy Do, Skyler Burger, Aliya Summers, Joshua Ho 
-**Version**: 1.0.0
-
-
-## Overview
-Have you ever wanted to send an anonymous, threatening ransom note to someone, but don't have time between kidnappings and bank heists to cut out one hundred letters from magazines?   
-
-Save time today - "SpooPy Notes" creates personalized ransom notes for you, simply and quickly. It's easier than breaking into a 1998 Camry!
-
-Use one of our pre-designed (and tested) templates to coerce your targets into adding bitcoins to your off-shore bank account. Or, write your own message for that special, personalized touch, you casanova.
-
-## Getting Started
-Head to our app and enter your ransom message. The app will turn your text into an image of a creepy ransom note. 
-
-## Architecture
-- [Pillow](https://python-pillow.org/): for image processing
-- [React](https://reactjs.org/): web framework for frontend
-
-## API
-<!-- Provide detailed instructions for your applications usage. This should include any methods or endpoints available to the user/client/developer. Each section should be formatted to provide clear syntax for usage, example calls including input data requirements and options, and example responses or return values. -->
-
-To access our front-end:
-- Go to https://spoopy-notes.firebaseapp.com/
-
-To access just our back-end:
-- Go to https://spoopy-notes.onrender.com/?query=
-
-- In the query section of our URL, you may enter the message you wish to generate. For example: https://spoopy-notes.onrender.com/?query=spoopy notes
-
-    - Note: the browser will handle spacing for you.
-
-- Your returned image will look similar to this:
 ![spoopy notes in magazine cut-out style](app/assets/spoopy_notes.png)
 
+**Version**: 1.3.0
+
+**Collaborators**: Tammy Do, Skyler Burger, Aliya Summers, Joshua Ho 
+
+**Back End URL**: [https://spoopy-notes.onrender.com](https://spoopy-notes.onrender.com)
+
+**Front End URL**: [https://spoopy-notes.firebaseapp.com/](https://spoopy-notes.firebaseapp.com/)
+
+## Overview
+Have you ever wanted to send an anonymous ransom note to someone, but don't have the time to cut out one hundred letters from magazines?   
+
+Save time today! **SpooPy Notes** creates personalized ransom notes for you, simply and quickly. It's easier than breaking into a 1998 Camry!
+
+Use our API to create personalized messages in a ransom note styled output image. Send the image to a recipient or use it as an asset in another project.
+
+## API
+- **GET /?query=**: Add a message as the query parameter to generate a ransom note-like image that includes the text you passed in.
+
+- **GET /dadjoke**: Returns a random dad joke from the [icanhazdadjoke API](https://icanhazdadjoke.com/api) in Spoopy Note's ransom note style.
+
+## Architecture
+### Packages
+- **[flask](https://pypi.org/project/Flask/)**: a Python web application framework
+- **[flask_api](https://pypi.org/project/Flask-API/)**: an extension to Flask that adds additional API-specific functionality 
+- **[flask_cors](https://pypi.org/project/Flask-Cors/)**: a Flask extension that enables resource sharing between the Flask back and React front end
+- **[pillow / PIL](https://pypi.org/project/Pillow/)**: a Python package for image processing
+- **[pytest](https://pypi.org/project/pytest/)**: a Python testing framework
+- **[requests](https://pypi.org/project/requests/)**: an HTTP library for Python
+
+### Python Standard Library
+- **[io](https://docs.python.org/3/library/io.html)**: used for file-less serving of images from the back end
+- **[os](https://docs.python.org/3/library/os.html)**: used for pathing to images on the server
+- **[random](https://docs.python.org/3/library/random.html)**: used for randomly picking letters
+- **[re](https://docs.python.org/3/library/re.html)**: used for validating input from users and external API data
 
 ## Change Log
 
-08-05-2019  
-- Set up basic Flask application onto render - https://spoopy-notes.onrender.com 
-- Added basic router
-- Created two repositories - frontend and backend
-- Updated ownership and collaboration settings for organization and repositories
-- Uploaded initial file structure for both repositories
+08/05/2019 - **1.1.0**
+- Deployed Flask application on Render
+- One-line image composition
 
-## User Stories
-- As someone who wants to scare their friends, I want to be able to make spooky notes without involving craft supplies.
-- As a developer, I want an easy to use back-end that is well-documented and commented.
-- As a developer, I want a home route so that my app will have a front page for the user to request a ransom note and receive it in ransom form.
-- As a developer, I want a random letter picker that will return the letters the user requested.
-- As a developer, I want tests that confirm my app works as expected. Including status codes for routes, image byte comparison, etc.
-- As a developer, I want an appropriate file structure so that other developers can easily understand the content. 
-- As a user, I want an easy to use interface that allows me to quickly create my own spooky note.
-- As a receiver of a note, I want a visually interesting note that shows each letter in a variety of fonts and colors. 
+08/06/2019 - **1.2.0**
+- Multi-line image composition
+- Back end serving images
+- Testing for back end with pytest
+
+08/07/2019 - **1.3.0**
+- Refined fonts
+- Refactored routes and modules
+- Added Dad Joke API integration
+- Refined image output
