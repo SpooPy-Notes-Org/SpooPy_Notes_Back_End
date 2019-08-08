@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image 
 from flask import send_file
 import os
 import random
@@ -10,7 +10,7 @@ from io import BytesIO
 def create_word_dictionaries(char_list):
     """
     Takes in a list of character image paths.
-    Converts paths to PIL Image objects.
+    Converts paths to PIL (Pillow) Image objects.
     Groups character image objects into words and stores them in dictionaries.
     Returns a list of word dictionaries.
     """
@@ -94,7 +94,7 @@ def create_lines(word_dicts):
 def determine_background(lines):
     """
     Takes in a list of lines.
-    Returnes the width and height of the background image needed for final image.
+    Returns the width and height of the background image needed for final image.
     """
     max_width = 0
     sum_of_height = 0
@@ -164,7 +164,6 @@ special_chars = {
     '\"': f'{base_punctuation_path}/doublequote_straight_1.png',
     '\n': ' ',
     '\t': ' ',
-    '\n': ' ',
     ' ': ' ',
     '@': f'{base_punctuation_path}/at_1.png',
     '$': f'{base_punctuation_path}/money_1.png',
@@ -188,6 +187,9 @@ special_chars = {
 
 
 def generate_paths(query_string):
+    """
+    handles the pathing to images in our assets folder. Takes in a query string, checks each character against a set of allowed characters. If it is an alphanumeric character, it accesses the path to that character's image by changing the path to match the character, and picking a number between 1 and 4 (the number of character sets we have) at random.
+    """
     query_string = query_string.lower()
     path_list = []
     regex_object = re.compile(r'[a-z0-9]')
@@ -209,6 +211,9 @@ def generate_paths(query_string):
 
 
 def create_note(query_string):
+    """
+    generates a SpooPy Note. See spoopy.py file for details on the functions this calls.
+    """
     paths = generate_paths(query_string)
     words = create_word_dictionaries(paths)
     lines = create_lines(words)

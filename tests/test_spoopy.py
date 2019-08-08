@@ -70,7 +70,6 @@ def test_determine_background(lines):
     assert actual == (521, 167)
 
 
-# This test may need some TLC
 def test_compose_image(lines, coords):
     width, height = coords
     actual = compose_image(width, height, lines)

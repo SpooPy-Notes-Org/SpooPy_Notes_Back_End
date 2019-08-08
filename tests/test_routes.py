@@ -35,11 +35,6 @@ def test_only_spaces(client):
 def test_many_spaces_followed_by_char(client):
     response = client.get('/?query=      ?')
     assert response.status_code == 200
-
-def test_invalid_characters(client):
-    with pytest.raises(ValueError) as context:
-        response = client.get('/?query=~tilde~tilde~')
-    assert str(context.value) == 'Invalid character input: ~'
     
 def test_query_mispelled(client):
     response = client.get('/?querrrry=ransom')
@@ -48,3 +43,4 @@ def test_query_mispelled(client):
 def test_route_mistyped(client):
     response = client.get('/query=ransom')
     assert response.status_code == 404
+
