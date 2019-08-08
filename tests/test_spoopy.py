@@ -72,5 +72,5 @@ def test_determine_background(lines):
 
 def test_compose_image(lines, coords):
     width, height = coords
-    actual = compose_image(width, height, lines)
+    actual = compose_image(width, height, lines, 900)
     assert actual != ''
