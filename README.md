@@ -31,7 +31,7 @@ To access just our back-end:
     - Note: the browser will handle spacing for you.
 
 - Your returned image will look similar to this:
-![spoopy notes in magazine cut-out style](app/assets/spoopy_notes_img.png)
+![spoopy notes in magazine cut-out style](app/assets/spoopy_notes.png)
 
 
 ## Change Log
