@@ -43,4 +43,3 @@ def test_query_mispelled(client):
 def test_route_mistyped(client):
     response = client.get('/query=ransom')
     assert response.status_code == 404
-

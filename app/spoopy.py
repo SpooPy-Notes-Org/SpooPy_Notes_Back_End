@@ -110,7 +110,7 @@ def determine_background(lines):
     return (max_width, sum_of_height)
 
 
-def compose_image(width, height, lines):
+def compose_image(width, height, lines, resize_width):
     """
     Takes in the width and height of the final image.
     Takes in a list of lines.
@@ -141,8 +141,9 @@ def compose_image(width, height, lines):
                 horizontal_buffer += char_w
             horizontal_buffer += 40
         v_buffer += line_height + 10
-
-    return background
+    
+    resize_height = int((resize_width / bg_width) * bg_height)
+    return background.resize((resize_width, resize_height))
 
 
 def serve_pil_image(pil_img):
@@ -210,13 +211,15 @@ def generate_paths(query_string):
     return path_list
 
 
-def create_note(query_string):
+def create_note(query_string, resize_width):
     """
-    generates a SpooPy Note. See spoopy.py file for details on the functions this calls.
+    Takes in a query string and a width for the final output image.
+    Makes calls to various functions in spoopy.py to construct an output image.
+    Returns an output image by using a file-less call to flask.send_file()
     """
     paths = generate_paths(query_string)
     words = create_word_dictionaries(paths)
     lines = create_lines(words)
     width, height = determine_background(lines)
-    image = compose_image(width, height, lines)
+    image = compose_image(width, height, lines, resize_width)
     return serve_pil_image(image)
