@@ -1,6 +1,6 @@
 ![spoopy notes in magazine cut-out style](app/assets/spoopy_notes.png)
 
-**Version**: 1.3.0
+**Version**: 1.4.0
 
 **Collaborators**: Tammy Do, Skyler Burger, Aliya Summers, Joshua Ho 
 
