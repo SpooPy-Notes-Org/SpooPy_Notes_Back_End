@@ -16,9 +16,17 @@ Save time today! **SpooPy Notes** creates personalized ransom notes for you, sim
 Use our API to create personalized messages in a ransom note styled output image. Send the image to a recipient or use it as an asset in another project.
 
 ## API
-- **GET /?query=**: Add a message as the query parameter to generate a ransom note-like image that includes the text you passed in.
+### GET /
+Query params:
+- query: a string of text representing the message you'd like in your SpooPy Note.
+- width (optional): the width of the output image.
 
-- **GET /dadjoke**: Returns a random dad joke from the [icanhazdadjoke API](https://icanhazdadjoke.com/api) in Spoopy Note's ransom note style.
+Returns:
+- A ransom note-like image of the text you supplied in your query.
+
+### GET /dadjoke
+Returns:
+- A ransom note-like image of a random dad joke from the [icanhazdadjoke API](https://icanhazdadjoke.com/api).
 
 ## Architecture
 ### Packages
