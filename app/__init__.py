@@ -21,7 +21,7 @@ def create_app(ConfigClass):
                 content = {'error': 'invalid'}
                 return content, status.HTTP_404_NOT_FOUND
 
-        @app.route('/dadgiggles', methods=['GET'])
+        @app.route('/dadjoke', methods=['GET'])
         def dad_jokes():
             url = 'https://www.icanhazdadjoke.com'
             headers = {'Accept' : 'application/json'}
