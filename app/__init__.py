@@ -27,7 +27,8 @@ def create_app(ConfigClass):
             url = 'https://www.icanhazdadjoke.com'
             headers = {'Accept' : 'application/json'}
             dad_joke = requests.get(url, headers=headers).json()
+            width = request.args.get('width', 900)
 
-            return create_note(dad_joke.get('joke'), 900)
+            return create_note(dad_joke.get('joke'), width)
 
     return app
